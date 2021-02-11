@@ -4,6 +4,16 @@ var router = express.Router();
 const request = require('request');
 
 
+var botconfig = {
+      
+  "endpointUrl": "https://d.la3-c1-ia4.salesforceliveagent.com/chat/rest/",
+  "version": 50,
+  "organizationId": "00D4x0000030k7E",
+  "deploymentId": "5724x000000gVhe",
+  "buttonId": "5734x000000gVS6",
+  "botid": "appi"
+}
+
 var responseObject = {
     "actions": [
     ]
@@ -57,15 +67,7 @@ router.post('/start/:botname', (req, res) => {
     //var jsonDataObj2 = {'so' : 'bot'};
     //var jsonSend = JSON.stringify(jsonDataObj);
    
-    var botconfig = {
-      
-      "endpointUrl": "https://d.la3-c1-ia4.salesforceliveagent.com/chat/rest/",
-      "version": 50,
-      "organizationId": "00D4x0000030k7E",
-      "deploymentId": "5724x000000gVhe",
-      "buttonId": "5734x000000gVS6",
-      "botid": "appi"
-  }
+    
     botid = 'default';
     var langs = 'en';
    console.log('memory', req.body.botid);
