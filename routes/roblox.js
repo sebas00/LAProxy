@@ -59,11 +59,11 @@ router.post('/start/:botname', (req, res) => {
    
     var botconfig = {
       
-      "endpointUrl": "https://d.gla3-phx.gus.salesforce.com/chat/rest/",
+      "endpointUrl": "https://d.la3-c1-ia4.salesforceliveagent.com/chat/rest/",
       "version": 50,
-      "organizationId": "00DB0000000YRSt",
-      "deploymentId": "572B00000001Oue",
-      "buttonId": "573B00000001Y96",
+      "organizationId": "00D4x0000030k7E",
+      "deploymentId": "5724x000000gVhe",
+      "buttonId": "5734x000000gVS6",
       "botid": "appi"
   }
     botid = 'default';
