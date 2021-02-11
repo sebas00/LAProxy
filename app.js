@@ -10,11 +10,29 @@ var robloxRouter =  require('./routes/roblox');
 
 var helmet = require('helmet');
 
+const { Client } = require('pg');
 
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
+
+client.query('SELECT botname FROM botinfo WHERE botname = $1;', ['sebtest'], (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
 
 var app = express();
 app.locals.la  = require('./liveagent-sdk-nodejs/liblist');
 app.locals.clients = [];
+app.locals.db = client;
 app.use(helmet())
 //app.locals.clients = [];
 //app.locals.reso;

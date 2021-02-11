@@ -60,7 +60,7 @@ router.post('/start/:botname', (req, res) => {
     var botconfig = {
       
       "endpointUrl": "https://d.gla3-phx.gus.salesforce.com/chat/rest/",
-      "version": 48,
+      "version": 50,
       "organizationId": "00DB0000000YRSt",
       "deploymentId": "572B00000001Oue",
       "buttonId": "573B00000001Y96",
@@ -73,16 +73,16 @@ router.post('/start/:botname', (req, res) => {
     
    // console.log('twilio', req.body)
     
-     langs='nl-NL';
+     langs='en-US';
     
     
       botid = req.body.botid
     
     var clientInfo = {
       name: "Spaghetti Proxy User",
-      language: "nl_NL",
+      language: "en_US",
       screenResolution: "none",
-      visitorName: "wsProxy",
+      visitorName: "BotProxy",
       prechatDetails : [
         {"label":"proxyChannel__c","value": 'roblox',"displayToAgent":true,"transcriptFields": ["proxyChannel__c"]},
         {"label":"proxyLanguage__c","value": langs,"transcriptFields":[ "proxyLanguage__c" ],"displayToAgent":true},
@@ -91,12 +91,12 @@ router.post('/start/:botname', (req, res) => {
         ]
   }
 
-    console.log('foundsettings');
+  req.app.locals.clients[req.body.botSessionId] = new req.app.locals.la.Client(botconfig, clientInfo);
     /*
     if(req.body.Memory.twilio.botid){
       botid = req.body.Memory.twilio.botid
      }
-*/
+
       BotConfig.find({ botid: botid }, function (err, configs) {
         if (err){ 
           req.app.locals.clients[req.body.botSessionId] = new req.app.locals.la.Client(botconfig, clientInfo);
@@ -116,7 +116,7 @@ router.post('/start/:botname', (req, res) => {
     
 
 
-      
+      */
  
 
 }})

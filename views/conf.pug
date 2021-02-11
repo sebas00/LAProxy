@@ -25,17 +25,17 @@ block content
       div.slds-container_fluid
        div.slds-summary-detail__title 
         div.slds-setup-assistant__step-summary
-         h3.slds-setup-assistant__step-summary-title.slds-text-heading_small Whatsapp config
-         p Please enter the phone number of the phone you will demo on.
+         h3.slds-setup-assistant__step-summary-title.slds-text-heading_small BotProxy config
+         p Please enter your botname.
       
        div.slds-setup-assistant__step-detail.slds-summary-detail__content
           div.slds-form(role="list") 
            form(method="post" id="botidform")
             div.form-group
              div.slds-form-element
-              label.slds-form-element__label(for='botid') <b>Your Phone Number</b> (Whatsapp) or bot name (Google Assist / Alexa / Amazon Lex):
+              label.slds-form-element__label(for='botid') <b>Your botname:
               div.slds-form-element__control
-               input.slds-input.slds-size_1-of-3(type="text" placeholder='+31655 etc', name='botid', required)
+               input.slds-input.slds-size_1-of-3(type="text" placeholder='botname', name='botid', required)
              div.slds-form-element.slds-p-top_x-small
               input.slds-button.slds-button_outline-brand(type="submit", value="Go!")
    

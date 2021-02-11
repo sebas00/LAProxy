@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const BotConfig = require('../models/botconfig');
+
 
 router.get('/', function(req, res){
     res.render('conf', {title: 'Whatsapp Bot Config'});
