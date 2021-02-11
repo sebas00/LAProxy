@@ -92,6 +92,9 @@ router.post('/start/:botname', (req, res) => {
   }
 
   req.app.locals.clients[req.body.botSessionId] = new req.app.locals.la.Client(botconfig, clientInfo);
+  req.app.locals.clients[req.body.botSessionId].res = res;
+  req.app.locals.clients[req.body.botSessionId].startmessage = req.body.CurrentInput;
+req.app.locals.clients[req.body.botSessionId].start(txtHandler);
     /*
     if(req.body.Memory.twilio.botid){
       botid = req.body.Memory.twilio.botid
